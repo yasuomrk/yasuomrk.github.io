@@ -1,0 +1,22 @@
+title: "yasuomrk"
+description: "symbolism is the highest form of expression; take a look around you!"
+url: "https://yasuomrk.github.io"
+baseurl: ""
+
+author: yasuomrk
+
+plugins:
+  - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      permalink: /posts/:title/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

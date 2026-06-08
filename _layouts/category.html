@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<nav class="breadcrumb">
+  ← <a href="{{ '/' | relative_url }}">home</a>
+  / <span class="crumb-current">{{ page.cat_name }}</span>
+</nav>
+
+{% if page.cat_description %}
+<div class="cat-description">
+  {{ page.cat_description }}
+  {% if page.cat_description_second %}
+  <span class="desc-second">{{ page.cat_description_second }}</span>
+  {% endif %}
+</div>
+{% endif %}
+
+<div class="post-list-label">// {{ page.cat_name }} — all posts</div>
+
+<ul class="post-list">
+  {% assign cat_posts = site.posts | where: "category", page.cat_id | sort: "date" | reverse %}
+  {% for post in cat_posts %}
+  <li class="post-item">
+    <a href="{{ post.url | relative_url }}">
+      <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+      <span class="post-title">{{ post.title }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

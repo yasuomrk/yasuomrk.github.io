@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<div class="section-label">// browse by category</div>
+
+<div class="category-grid">
+  <a class="category-card" href="{{ '/categories/maths' | relative_url }}">
+    <div class="cat-name">maths</div>
+    <div class="cat-meta">
+      {% assign count = site.posts | where: "category", "maths" | size %}
+      {{ count }} post{% if count != 1 %}s{% endif %}
+    </div>
+  </a>
+
+  <a class="category-card" href="{{ '/categories/hacking' | relative_url }}">
+    <div class="cat-name">hacking</div>
+    <div class="cat-meta">
+      {% assign count = site.posts | where: "category", "hacking" | size %}
+      HTB &middot; CTF writeups &mdash; {{ count }} post{% if count != 1 %}s{% endif %}
+    </div>
+  </a>
+
+  <a class="category-card" href="{{ '/categories/beyond' | relative_url }}">
+    <div class="cat-name">beyond</div>
+    <div class="cat-meta">
+      {% assign count = site.posts | where: "category", "beyond" | size %}
+      thoughts &amp; essays &mdash; {{ count }} post{% if count != 1 %}s{% endif %}
+    </div>
+  </a>
+</div>
+
+<div class="post-list-label">// recent posts</div>
+
+<ul class="post-list">
+  {% for post in site.posts limit: 10 %}
+  <li class="post-item">
+    <a href="{{ post.url | relative_url }}">
+      <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+      <span class="post-cat-tag">{{ post.category }}</span>
+      <span class="post-title">{{ post.title }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
