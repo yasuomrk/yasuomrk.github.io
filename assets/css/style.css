@@ -18,7 +18,7 @@
   --text-ghost:#333;
 }
 
-html { font-size: 16px; }
+html { font-size: 20px; }
 
 body {
   background: var(--bg);
@@ -32,7 +32,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ── layout ── */
 .site-wrap {
-  max-width: 780px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 2.5rem 2rem;
 }
